@@ -199,8 +199,8 @@ Project Link: [https://github.com/your_username/repo_name](https://github.com/yo
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/Med-MG/GestionAbsence.svg?style=for-the-badge
-[contributors-url]: https://github.com/Med-MG/GestionAbsence/graphs/contributors
+[contributors-shield]: https://img.shields.io/github/contributors/uCsahrp/GestionAbsence/.svg?style=for-the-badge
+[contributors-url]: https://github.com/uCsahrp/GestionAbsence/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/Med-MG/GestionAbsence.svg?style=for-the-badge
 [forks-url]: https://github.com/Med-MG/GestionAbsence/network/members
 [stars-shield]: https://img.shields.io/github/stars/Med-MG/GestionAbsence.svg?style=for-the-badge
