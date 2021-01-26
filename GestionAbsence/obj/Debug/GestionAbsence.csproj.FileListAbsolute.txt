@@ -48,3 +48,14 @@ C:\Users\Administrateur\source\repos\Gestion-ABS-\GestionAbsence\obj\Debug\Gesti
 C:\Users\Administrateur\source\repos\Gestion-ABS-\GestionAbsence\obj\Debug\GestionAbsence.csproj.CopyComplete
 C:\Users\Administrateur\source\repos\Gestion-ABS-\GestionAbsence\obj\Debug\GestionAbsence.exe
 C:\Users\Administrateur\source\repos\Gestion-ABS-\GestionAbsence\obj\Debug\GestionAbsence.pdb
+C:\Users\Administrateur\source\repos\Gestion-ABS-\GestionAbsence\bin\Debug\HandyControl.dll
+C:\Users\Administrateur\source\repos\Gestion-ABS-\GestionAbsence\bin\Debug\HandyControl.xml
+C:\Users\Administrateur\source\repos\Gestion-ABS-\GestionAbsence\bin\Debug\en\HandyControl.resources.dll
+C:\Users\Administrateur\source\repos\Gestion-ABS-\GestionAbsence\bin\Debug\fa\HandyControl.resources.dll
+C:\Users\Administrateur\source\repos\Gestion-ABS-\GestionAbsence\bin\Debug\fr\HandyControl.resources.dll
+C:\Users\Administrateur\source\repos\Gestion-ABS-\GestionAbsence\bin\Debug\ko-KR\HandyControl.resources.dll
+C:\Users\Administrateur\source\repos\Gestion-ABS-\GestionAbsence\bin\Debug\ru\HandyControl.resources.dll
+C:\Users\Administrateur\source\repos\Gestion-ABS-\GestionAbsence\bin\Debug\tr\HandyControl.resources.dll
+C:\Users\Administrateur\source\repos\Gestion-ABS-\GestionAbsence\obj\Debug\Views\LoginView.g.cs
+C:\Users\Administrateur\source\repos\Gestion-ABS-\GestionAbsence\obj\Debug\Views\LoginView.baml
+C:\Users\Administrateur\source\repos\Gestion-ABS-\GestionAbsence\obj\Debug\GestionAbsence_Content.g.cs

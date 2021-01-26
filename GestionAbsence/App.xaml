@@ -8,9 +8,12 @@
                 <ResourceDictionary>
                     <local:Bootstrapper x:Key="Bootstrapper"/>
                 </ResourceDictionary>
-
+                <ResourceDictionary Source="pack://application:,,,/HandyControl;component/Themes/SkinDefault.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/HandyControl;component/Themes/Theme.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
         </ResourceDictionary>
+      
+        
     </Application.Resources>
 </Application>

@@ -44,6 +44,9 @@
     <Reference Include="Caliburn.Micro.Platform.Core, Version=3.2.0.0, Culture=neutral, PublicKeyToken=8e5891231f2ed21f, processorArchitecture=MSIL">
       <HintPath>..\packages\Caliburn.Micro.3.2.0\lib\net45\Caliburn.Micro.Platform.Core.dll</HintPath>
     </Reference>
+    <Reference Include="HandyControl, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\HandyControl.3.0.0\lib\net47\HandyControl.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -99,6 +102,25 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <Resource Include="fonts\POPPINS-BOLD.OTF" />
+    <Resource Include="fonts\POPPINS-EXTRABOLD.OTF" />
+    <Resource Include="fonts\POPPINS-LIGHT.OTF" />
+    <Resource Include="fonts\POPPINS-LIGHTITALIC.TTF" />
+    <Resource Include="fonts\POPPINS-MEDIUM.TTF" />
+    <Resource Include="fonts\POPPINS-MEDIUMITALIC.TTF" />
+    <Resource Include="fonts\POPPINS-REGULAR.TTF" />
+    <Resource Include="fonts\POPPINS-SEMIBOLD.TTF" />
+    <Resource Include="fonts\POPPINS-SEMIBOLDITALIC.TTF" />
+    <Resource Include="fonts\POPPINS-THIN.TTF" />
+    <Resource Include="fonts\CERA PRO BLACK ITALIC.OTF" />
+    <Resource Include="fonts\CERA PRO BLACK.OTF" />
+    <Resource Include="fonts\CERA PRO BOLD.OTF" />
+    <Resource Include="fonts\CERA PRO LIGHT.OTF" />
+    <Resource Include="fonts\CERA PRO MEDIUM.OTF" />
+    <Resource Include="fonts\CERA PRO REGULAR ITALIC.OTF" />
+    <Resource Include="fonts\CERA PRO REGULAR.OTF" />
+    <Resource Include="fonts\CERA PRO THIN.OTF" />
+    <None Include="Design\projectGuides.guides" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -120,6 +142,18 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Views\langCloudAnime.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\langCloudAnime.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\langCloudAnimeCp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="images\langCloudAnime.svg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
