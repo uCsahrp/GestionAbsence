@@ -12,7 +12,7 @@
 		WindowStyle="None"
 		BorderThickness="2"
 		WindowStartupLocation="CenterScreen"
-		Loaded="Window_Loaded"
+		
         >
     <Window.Resources>
         <Style x:Key="poppinsReg">
@@ -21,6 +21,84 @@
         <Style x:Key="poppinsBold">
             <Setter Property="TextElement.FontFamily" Value="fonts/POPPINS-BOLD"/>
         </Style>
+        <!--Round corners for Textbox-->
+        <ControlTemplate x:Key="TextBoxBaseControlTemplate" TargetType="{x:Type TextBoxBase}">
+            <Border Background="{TemplateBinding Background}" 
+                x:Name="Bd"
+                BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="12">
+                <ScrollViewer x:Name="PART_ContentHost"/>
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}" TargetName="Bd"/>
+                    <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                </Trigger>
+                <Trigger Property="Width" Value="Auto">
+                    <Setter Property="MinWidth" Value="100"/>
+                </Trigger>
+                <Trigger Property="Height" Value="Auto">
+                    <Setter Property="MinHeight" Value="20"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+        <Style x:Key="FocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" SnapsToDevicePixels="true" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeThickness="1" StrokeDashArray="1 2"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <!--Round Button style-->
+        <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
+        <Style x:Key="RoundBtn" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" CornerRadius="30" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="true" Margin="0,0,-26,-6.667">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="#EA4B78"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="#EA4B78"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="#E92E63"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="#E92E63"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+       
+
     </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
@@ -40,16 +118,18 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-
+        <!--Window Backgrounf-->
         <Rectangle x:Name="background" Grid.ColumnSpan="5" HorizontalAlignment="Left" Height="1038" Margin="0,3,0,0" Grid.RowSpan="7" VerticalAlignment="Top" Width="1529" RadiusX="30" RadiusY="30" Stroke="#CCFFFFFF" ClipToBounds="True" StrokeThickness="3" MouseDown="background_MouseDown">
             <Rectangle.Fill>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0,0">
-                    <GradientStop Color="#FFEDEEF8" Offset="0.002"/>
-                    <GradientStop Color="#CCEDEEF8" Offset="1"/>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#F2EDEEF8" Offset="0"/>
+                    <GradientStop Color="#E5EDEEF8" Offset="1"/>
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
+        <!--Window Sidebar-->
         <Border BorderThickness="1" HorizontalAlignment="Left" Height="1038" Grid.RowSpan="7" VerticalAlignment="Top" Width="484" CornerRadius="30,0,0,30" Grid.ColumnSpan="2" Margin="0,3,0,0" MouseDown="Border_MouseDown" ClipToBounds="True" Background="#FFECEDF7"/>
+        <!--Report issues card-->
         <Border x:Name="Report" BorderThickness="1" Margin="78,131,116,80" Background="White" CornerRadius="30" Grid.Column="1" Grid.Row="3" Grid.RowSpan="2">
 
             <Grid>
@@ -61,32 +141,133 @@
                 <StackPanel x:Name="ReportIssue" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <TextBlock  FontFamily="Cera Pro Bold" HorizontalAlignment="Center" FontSize="19" Foreground="#FF273240">Report Issues</TextBlock>
                     <TextBlock  FontFamily="Cera Pro regular" HorizontalAlignment="Center" Margin="0,11,0,0" TextAlignment="Center" Foreground="#FFC4C4C4" FontSize="11" TextWrapping="WrapWithOverflow" Height="50.147"><Run Text="For better maintainable app"/><LineBreak/><Run Text="report any diffuclty you've encounter."/><LineBreak/><Run Text="suggest any new "/><Run FontWeight="SemiBold" Text="features"/><Run Text=" &amp; enhencements"/></TextBlock>
-                    
+
                     <Button Content="Contact Us" HorizontalAlignment="Center" Height="44" Margin="0,12,0,0" Width="162.667" Background="#FFE92E63" BorderBrush="{x:Null}" Foreground="White" FontFamily="/GestionAbsence;component/fonts/#Cera Pro"/>
-                    
-                   
+
+
                 </StackPanel>
             </Grid>
 
 
         </Border>
 
-
+        <!--Window Navs or contorllers-->
         <StackPanel x:Name="___WindowNavs_" Orientation="Horizontal" Grid.Column="1" Grid.Row="1">
             <Ellipse x:Name="closeWindow"  HorizontalAlignment="Left" Height="12.558"  VerticalAlignment="Top" Width="12.558" Fill="#FFFF5E57" MouseDown="closeWindow_MouseDown"  />
             <Ellipse x:Name="Maxwindow" HorizontalAlignment="Left" Height="12.558"  VerticalAlignment="Top" Width="12.558"  Fill="#FFFEBC2E" Margin="20,0,0,0"  />
             <Ellipse x:Name="MinimizeWindow" HorizontalAlignment="Left" Height="12.558" VerticalAlignment="Top" Width="12.558" Fill="#FF28C73E" Margin="20,0,0,0"   />
         </StackPanel>
+        <!--Youcode logo-->
         <StackPanel x:Name="Logo" Grid.ColumnSpan="2"  Orientation="Horizontal" Grid.Row="2" VerticalAlignment="Bottom" HorizontalAlignment="Center">
             <TextBlock HorizontalAlignment="Left" Height="68" TextWrapping="Wrap" VerticalAlignment="Top" Width="90" FontSize="48"  FontFamily="/GestionAbsence;component/fonts/#Poppins" Text="You"/>
             <TextBlock HorizontalAlignment="Left" Height="68" TextWrapping="Wrap" VerticalAlignment="Top" Width="158" FontSize="48"  FontFamily="/GestionAbsence;component/fonts/#Poppins SemiBold" Foreground="#FF227EEA"><Run Text="Code."/></TextBlock>
         </StackPanel>
+        <!--charachter design colorfull-->
         <Image Source="/images/langCloudAnimeCp.png" RenderOptions.BitmapScalingMode="HighQuality"  Height="250" VerticalAlignment="Bottom" Stretch="Fill"   Grid.Row="6" Grid.ColumnSpan="2"/>
+        <!--Header Title-->
         <StackPanel Grid.Column="3" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center"  >
             <TextBlock Height="78"  TextWrapping="Wrap" Text="Sign in to your account"  Width="744" FontFamily="Cera Pro Black" FontSize="60"/>
-            <TextBlock Height="34"  TextWrapping="Wrap" Text="Sign in to your youcode account"  Width="744" FontFamily="Cera Pro regular" FontSize="25" Foreground="#FF8793AC"/>
+            <TextBlock Height="34"  TextWrapping="Wrap" Text="Sign in to your youcode account"  Width="744" FontFamily="Cera Pro light" FontSize="20" Foreground="#FF8793AC"/>
         </StackPanel>
-        
+        <!--Login Inputs-->
+        <StackPanel Grid.Column="3" Grid.Row="4" Orientation="Horizontal" VerticalAlignment="Center" >
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="80" />
+                    <ColumnDefinition Width="auto"/>
+
+
+                </Grid.ColumnDefinitions>
+                <StackPanel Margin="0,0,20,0" Panel.ZIndex="1" RenderTransformOrigin="0.483,0.628"  >
+                    <TextBlock x:Name="UsernameTitle" Text="Username" FontSize="23" FontFamily="Cera Pro bold" Margin="0,0,0,17" Foreground="#FF152C5B"></TextBlock>
+                    <TextBox x:Name="UsernameInput" Template="{StaticResource TextBoxBaseControlTemplate}" Height="54" MinWidth="150" TextWrapping="Wrap" Padding="40,0,0,0" Text="" FontSize="16" Width="333" FontFamily="Cera Pro light" Foreground="#FF202021" SelectionBrush="#FFA078E6" BorderBrush="{x:Null}" FontWeight="Light" CaretBrush="#FFA078E6"/>
+                    <TextBlock x:Name="UsernamePlaceholder" IsHitTestVisible="False" Text="Username" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="41,-53,0,0" Foreground="DarkGray" FontFamily="Cera Pro Light" FontSize="14">
+                        <TextBlock.Style>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="Visibility" Value="Collapsed"/>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding Text, ElementName=UsernameInput}" Value="">
+                                        <Setter Property="Visibility" Value="Visible"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBlock.Style>
+                    </TextBlock>
+                    <Rectangle Height="2" RadiusY="30" RadiusX="30" Stroke="#CCFFFFFF" StrokeThickness="3" Width="2">
+                        <Rectangle.Fill>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#F2EDEEF8" Offset="0"/>
+                                <GradientStop Color="#E5EDEEF8" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <Rectangle Height="2" RadiusY="30" RadiusX="30" Stroke="#CCFFFFFF" StrokeThickness="3" Width="1.333">
+                        <Rectangle.Fill>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#F2EDEEF8" Offset="0"/>
+                                <GradientStop Color="#E5EDEEF8" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <Rectangle x:Name="userIcon" Height="14.666" StrokeThickness="3" Width="14.666" HorizontalAlignment="Left" Margin="14,-62,0,0">
+                        <Rectangle.Fill>
+                            <ImageBrush ImageSource="/GestionAbsence;component/images/icon/user.png"/>
+                        </Rectangle.Fill>
+                    </Rectangle>
+
+                </StackPanel>
+                <StackPanel  Panel.ZIndex="1" RenderTransformOrigin="0.483,0.628" HorizontalAlignment="Right" Grid.Column="2">
+                    <TextBlock x:Name="PasswordTitle" Text="Password" FontSize="23" FontFamily="Cera Pro bold" Margin="0,0,0,17" Foreground="#FF152C5B"></TextBlock>
+                    <TextBox x:Name="PasswordInput" Template="{StaticResource TextBoxBaseControlTemplate}" Height="54"  MinWidth="150" TextWrapping="Wrap" Padding="40,0,0,0" Text="" FontSize="16" Width="333" FontFamily="/GestionAbsence;component/fonts/#Password" Foreground="#FF202021" SelectionBrush="#FFA078E6" BorderBrush="{x:Null}" FontWeight="Light" CaretBrush="#FFA078E6"/>
+                    <TextBlock x:Name="PasswordPlaceholder" IsHitTestVisible="False" Text="password" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="41,-53,0,0" Foreground="DarkGray" FontFamily="Cera Pro Light" FontSize="14">
+                        <TextBlock.Style>
+                            <Style TargetType="{x:Type TextBlock}">
+                                <Setter Property="Visibility" Value="Collapsed"/>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding Text, ElementName=PasswordInput}" Value="">
+                                        <Setter Property="Visibility" Value="Visible"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </TextBlock.Style>
+                    </TextBlock>
+                    <Rectangle Height="2" RadiusY="30" RadiusX="30" Stroke="#CCFFFFFF" StrokeThickness="3" Width="2">
+                        <Rectangle.Fill>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#F2EDEEF8" Offset="0"/>
+                                <GradientStop Color="#E5EDEEF8" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <Rectangle Height="2" RadiusY="30" RadiusX="30" Stroke="#CCFFFFFF" StrokeThickness="3" Width="1.333">
+                        <Rectangle.Fill>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#F2EDEEF8" Offset="0"/>
+                                <GradientStop Color="#E5EDEEF8" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <Rectangle Height="14.666" StrokeThickness="3" Width="14.666" HorizontalAlignment="Left" Margin="14,-62,0,0">
+                        <Rectangle.Fill>
+                            <ImageBrush ImageSource="/GestionAbsence;component/images/icon/padlock.png"/>
+                        </Rectangle.Fill>
+                    </Rectangle>
+
+                </StackPanel>
+            </Grid>
+
+
+
+        </StackPanel>
+        <!--Login button-->
+        <Button Content="Login" Style="{DynamicResource RoundBtn}" Grid.Column="3" HorizontalAlignment="Left" Height="53" Grid.Row="5" VerticalAlignment="Top" Width="155" BorderBrush="{x:Null}" Background="#FFE92E63" Foreground="White" FontFamily="/GestionAbsence;component/fonts/#Cera Pro" FontSize="14">
+            <Button.Effect>
+                <DropShadowEffect Direction="309" ShadowDepth="6" BlurRadius="25" Opacity="0.415"  Color="#E92E63"/>
+            </Button.Effect>
+        </Button>
 
     </Grid>
 

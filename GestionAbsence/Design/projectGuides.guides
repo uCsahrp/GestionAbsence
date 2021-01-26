@@ -7,6 +7,11 @@
           <Guides>
             <Guide Alignment="Left" Position="100" />
             <Guide Alignment="Left" Position="370" />
+            <Guide Alignment="Left" Position="1366" />
+            <Guide Alignment="Left" Position="1035" />
+            <Guide Alignment="Left" Position="936" />
+            <Guide Alignment="Left" Position="603" />
+            <Guide Alignment="Top" Position="597" />
           </Guides>
         </GuideModel>
       </GuideModels>

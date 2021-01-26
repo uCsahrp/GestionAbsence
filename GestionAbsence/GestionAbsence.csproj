@@ -121,6 +121,7 @@
     <Resource Include="fonts\CERA PRO REGULAR.OTF" />
     <Resource Include="fonts\CERA PRO THIN.OTF" />
     <None Include="Design\projectGuides.guides" />
+    <Resource Include="fonts\password.ttf" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -153,6 +154,8 @@
     <Resource Include="images\langCloudAnimeCp.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="images\icon\user.png" />
+    <Resource Include="images\icon\padlock.png" />
     <Content Include="images\langCloudAnime.svg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
