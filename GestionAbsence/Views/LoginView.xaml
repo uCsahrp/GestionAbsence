@@ -12,7 +12,7 @@
 		WindowStyle="None"
 		BorderThickness="2"
 		WindowStartupLocation="CenterScreen"
-		
+		Loaded="Window_Loaded" ResizeMode="NoResize"
         >
     <Window.Resources>
         <Style x:Key="poppinsReg">
@@ -97,7 +97,103 @@
                 </Setter.Value>
             </Setter>
         </Style>
-       
+        <Style x:Key="ContactUsRounded" TargetType="{x:Type Button}">
+            <Setter Property="Foreground" Value="{DynamicResource PrimaryTextBrush}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Style.BasedOn>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="{DynamicResource RegionBrush}"/>
+                    <Setter Property="hc:BorderElement.CornerRadius" Value="4"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <hc:SimplePanel>
+                                    <Border Background="{TemplateBinding Background}" CornerRadius="25" Margin="10,0"/>
+                                    <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="{Binding (hc:BorderElement.CornerRadius), RelativeSource={RelativeSource TemplatedParent}}">
+                                        <StackPanel HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" Orientation="Horizontal" VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
+                                            <Path x:Name="PathMain" Data="{TemplateBinding hc:IconElement.Geometry}" Fill="{TemplateBinding Foreground}" Height="{TemplateBinding hc:IconElement.Height}" Stretch="Uniform" SnapsToDevicePixels="True" Width="{TemplateBinding hc:IconElement.Width}"/>
+                                            <ContentPresenter x:Name="ContentPresenterMain" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" ContentStringFormat="{TemplateBinding ContentStringFormat}" Margin="6,0,0,0" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="Center"/>
+                                        </StackPanel>
+                                    </Border>
+                                </hc:SimplePanel>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="Content" Value="{x:Null}">
+                                        <Setter Property="Visibility" TargetName="ContentPresenterMain" Value="Collapsed"/>
+                                    </Trigger>
+                                    <Trigger Property="hc:IconElement.Geometry" Value="{x:Null}">
+                                        <Setter Property="Visibility" TargetName="PathMain" Value="Collapsed"/>
+                                        <Setter Property="Margin" TargetName="ContentPresenterMain" Value="0"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                    <Style.BasedOn>
+                        <Style TargetType="{x:Type ButtonBase}">
+                            <Setter Property="Height" Value="30"/>
+                            <Setter Property="BorderBrush" Value="{DynamicResource BorderBrush}"/>
+                            <Setter Property="Padding" Value="10,6"/>
+                            <Setter Property="Foreground" Value="{DynamicResource TextIconBrush}"/>
+                            <Setter Property="BorderThickness" Value="0"/>
+                            <Setter Property="HorizontalAlignment" Value="Center"/>
+                            <Setter Property="VerticalAlignment" Value="Center"/>
+                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                            <Setter Property="VerticalContentAlignment" Value="Center"/>
+                            <Style.BasedOn>
+                                <Style TargetType="{x:Type Control}">
+                                    <Setter Property="Foreground" Value="{DynamicResource PrimaryTextBrush}"/>
+                                    <Setter Property="FontSize" Value="12"/>
+                                    <Setter Property="FocusVisualStyle">
+                                        <Setter.Value>
+                                            <Style>
+                                                <Setter Property="Control.Template">
+                                                    <Setter.Value>
+                                                        <ControlTemplate>
+                                                            <Rectangle RadiusY="4" RadiusX="4">
+                                                                <Rectangle.Style>
+                                                                    <Style TargetType="{x:Type Rectangle}">
+                                                                        <Setter Property="Margin" Value="-2"/>
+                                                                        <Setter Property="Opacity" Value="0.6"/>
+                                                                        <Setter Property="SnapsToDevicePixels" Value="True"/>
+                                                                        <Setter Property="Stroke" Value="{DynamicResource SecondaryBorderBrush}"/>
+                                                                        <Setter Property="StrokeThickness" Value="2"/>
+                                                                        <Setter Property="StrokeDashArray" Value="1 1"/>
+                                                                    </Style>
+                                                                </Rectangle.Style>
+                                                            </Rectangle>
+                                                        </ControlTemplate>
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </Style>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </Style.BasedOn>
+                        </Style>
+                    </Style.BasedOn>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Opacity" Value="0.9"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Opacity" Value="0.6"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Opacity" Value="0.4"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Style.BasedOn>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="{DynamicResource SecondaryRegionBrush}"/>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="Background" Value="{DynamicResource BorderBrush}"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
 
     </Window.Resources>
     <Grid>
@@ -121,9 +217,9 @@
         <!--Window Backgrounf-->
         <Rectangle x:Name="background" Grid.ColumnSpan="5" HorizontalAlignment="Left" Height="1038" Margin="0,3,0,0" Grid.RowSpan="7" VerticalAlignment="Top" Width="1529" RadiusX="30" RadiusY="30" Stroke="#CCFFFFFF" ClipToBounds="True" StrokeThickness="3" MouseDown="background_MouseDown">
             <Rectangle.Fill>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#F2EDEEF8" Offset="0"/>
-                    <GradientStop Color="#E5EDEEF8" Offset="1"/>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" Opacity="0.97">
+                    <GradientStop Color="#F4EDEEF8" Offset="0"/>
+                    <GradientStop Color="#EDEBECF7" Offset="1"/>
                 </LinearGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
@@ -142,7 +238,7 @@
                     <TextBlock  FontFamily="Cera Pro Bold" HorizontalAlignment="Center" FontSize="19" Foreground="#FF273240">Report Issues</TextBlock>
                     <TextBlock  FontFamily="Cera Pro regular" HorizontalAlignment="Center" Margin="0,11,0,0" TextAlignment="Center" Foreground="#FFC4C4C4" FontSize="11" TextWrapping="WrapWithOverflow" Height="50.147"><Run Text="For better maintainable app"/><LineBreak/><Run Text="report any diffuclty you've encounter."/><LineBreak/><Run Text="suggest any new "/><Run FontWeight="SemiBold" Text="features"/><Run Text=" &amp; enhencements"/></TextBlock>
 
-                    <Button Content="Contact Us" HorizontalAlignment="Center" Height="44" Margin="0,12,0,0" Width="162.667" Background="#FFE92E63" BorderBrush="{x:Null}" Foreground="White" FontFamily="/GestionAbsence;component/fonts/#Cera Pro"/>
+                    <Button Content="Contact Us" HorizontalAlignment="Center" Height="44" Margin="0,12,0,0" Width="162.667" Background="#FFE92E63" BorderBrush="{x:Null}" Foreground="White" FontFamily="/GestionAbsence;component/fonts/#Cera Pro" Style="{DynamicResource ContactUsRounded}"/>
 
 
                 </StackPanel>
@@ -166,7 +262,7 @@
         <Image Source="/images/langCloudAnimeCp.png" RenderOptions.BitmapScalingMode="HighQuality"  Height="250" VerticalAlignment="Bottom" Stretch="Fill"   Grid.Row="6" Grid.ColumnSpan="2"/>
         <!--Header Title-->
         <StackPanel Grid.Column="3" Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center"  >
-            <TextBlock Height="78"  TextWrapping="Wrap" Text="Sign in to your account"  Width="744" FontFamily="Cera Pro Black" FontSize="60"/>
+            <TextBlock Height="78"  TextWrapping="Wrap" Text="Sign in to your account"  Width="744" FontFamily="Cera Pro Black" FontSize="60" Foreground="#FF152C5B"/>
             <TextBlock Height="34"  TextWrapping="Wrap" Text="Sign in to your youcode account"  Width="744" FontFamily="Cera Pro light" FontSize="20" Foreground="#FF8793AC"/>
         </StackPanel>
         <!--Login Inputs-->
@@ -234,27 +330,12 @@
                             </Style>
                         </TextBlock.Style>
                     </TextBlock>
-                    <Rectangle Height="2" RadiusY="30" RadiusX="30" Stroke="#CCFFFFFF" StrokeThickness="3" Width="2">
-                        <Rectangle.Fill>
-                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                <GradientStop Color="#F2EDEEF8" Offset="0"/>
-                                <GradientStop Color="#E5EDEEF8" Offset="1"/>
-                            </LinearGradientBrush>
-                        </Rectangle.Fill>
-                    </Rectangle>
-                    <Rectangle Height="2" RadiusY="30" RadiusX="30" Stroke="#CCFFFFFF" StrokeThickness="3" Width="1.333">
-                        <Rectangle.Fill>
-                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                <GradientStop Color="#F2EDEEF8" Offset="0"/>
-                                <GradientStop Color="#E5EDEEF8" Offset="1"/>
-                            </LinearGradientBrush>
-                        </Rectangle.Fill>
-                    </Rectangle>
                     <Rectangle Height="14.666" StrokeThickness="3" Width="14.666" HorizontalAlignment="Left" Margin="14,-62,0,0">
                         <Rectangle.Fill>
                             <ImageBrush ImageSource="/GestionAbsence;component/images/icon/padlock.png"/>
                         </Rectangle.Fill>
                     </Rectangle>
+                    <TextBlock Height="22.667" TextWrapping="Wrap" Text="Forgot password ?" Width="112" HorizontalAlignment="Right" Margin="0,6,0,0" FontFamily="/GestionAbsence;component/fonts/#Cera Pro" Foreground="#FF8793AC"/>
 
                 </StackPanel>
             </Grid>
