@@ -8,7 +8,7 @@
                 <ResourceDictionary>
                     <local:Bootstrapper x:Key="Bootstrapper"/>
                 </ResourceDictionary>
-
+                <ResourceDictionary Source="Styles/Fonts.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
         </ResourceDictionary>
