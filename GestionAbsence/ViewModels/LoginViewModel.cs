@@ -59,14 +59,12 @@ namespace GestionAbsence.ViewModels
             }
 
         }
-        public async Task LogIn()
+        public async Task Login()
         {
-
 
             try
             {
                 var result = await _apiHelper.Authenticate(UsernameInput, PasswordInput);
-
             }
             catch (Exception ex)
             {

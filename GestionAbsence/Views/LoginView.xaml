@@ -345,7 +345,7 @@
 
         </StackPanel>
         <!--Login button-->
-        <Button Content="Login" Style="{DynamicResource RoundBtn}" Grid.Column="3" HorizontalAlignment="Left" Height="53" Grid.Row="5" VerticalAlignment="Top" Width="155" BorderBrush="{x:Null}" Background="#FFE92E63" Foreground="White" FontFamily="{StaticResource CeraRegular}" FontSize="14">
+        <Button x:Name="Login" Content="Login" Style="{DynamicResource RoundBtn}" Grid.Column="3" HorizontalAlignment="Left" Height="53" Grid.Row="5" VerticalAlignment="Top" Width="155" BorderBrush="{x:Null}" Background="#FFE92E63" Foreground="White" FontFamily="{StaticResource CeraRegular}" FontSize="14">
             <Button.Effect>
                 <DropShadowEffect Direction="309" ShadowDepth="6" BlurRadius="25" Opacity="0.415"  Color="#E92E63"/>
             </Button.Effect>

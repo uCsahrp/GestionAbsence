@@ -95,3 +95,7 @@ C:\Users\youcode\Desktop\projects\GestionAbsence-1\GestionAbsence\obj\Debug\Gest
 C:\Users\youcode\Desktop\projects\GestionAbsence-1\GestionAbsence\obj\Debug\GestionAbsence.csproj.GenerateResource.cache
 C:\Users\youcode\Desktop\projects\GestionAbsence-1\GestionAbsence\obj\Debug\GestionAbsence.csproj.CoreCompileInputs.cache
 C:\Users\youcode\Desktop\projects\GestionAbsence-1\GestionAbsence\obj\Debug\GestionAbsence.csproj.CopyComplete
+C:\Users\youcode\Desktop\projects\GestionAbsence-1\GestionAbsence\bin\Debug\Newtonsoft.Json.dll
+C:\Users\youcode\Desktop\projects\GestionAbsence-1\GestionAbsence\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\youcode\Desktop\projects\GestionAbsence-1\GestionAbsence\bin\Debug\Newtonsoft.Json.xml
+C:\Users\youcode\Desktop\projects\GestionAbsence-1\GestionAbsence\bin\Debug\System.Net.Http.Formatting.xml
