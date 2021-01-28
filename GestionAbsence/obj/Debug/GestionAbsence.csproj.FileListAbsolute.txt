@@ -23,3 +23,39 @@ C:\Users\youcode\Desktop\New folder\GestionAbsence\GestionAbsence\obj\Debug\Gest
 C:\Users\youcode\Desktop\New folder\GestionAbsence\GestionAbsence\obj\Debug\GestionAbsence.pdb
 C:\Users\youcode\Desktop\New folder\GestionAbsence\GestionAbsence\obj\Debug\Views\ShellView.g.cs
 C:\Users\youcode\Desktop\New folder\GestionAbsence\GestionAbsence\obj\Debug\Views\ShellView.baml
+C:\Users\Administrateur\source\repos\Gestion-ABS-\GestionAbsence\obj\Debug\GestionAbsence.csprojAssemblyReference.cache
+C:\Users\Administrateur\source\repos\Gestion-ABS-\GestionAbsence\obj\Debug\Views\LoginView.g.cs
+C:\Users\Administrateur\source\repos\Gestion-ABS-\GestionAbsence\obj\Debug\Views\ShellView.g.cs
+C:\Users\Administrateur\source\repos\Gestion-ABS-\GestionAbsence\obj\Debug\App.g.cs
+C:\Users\Administrateur\source\repos\Gestion-ABS-\GestionAbsence\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Administrateur\source\repos\Gestion-ABS-\GestionAbsence\obj\Debug\GestionAbsence_MarkupCompile.cache
+C:\Users\Administrateur\source\repos\Gestion-ABS-\GestionAbsence\obj\Debug\GestionAbsence_MarkupCompile.lref
+C:\Users\Administrateur\source\repos\Gestion-ABS-\GestionAbsence\obj\Debug\GestionAbsence.exe
+C:\Users\Administrateur\source\repos\Gestion-ABS-\GestionAbsence\obj\Debug\GestionAbsence.pdb
+C:\Users\Administrateur\source\repos\Gestion-ABS-\GestionAbsence\bin\Debug\GestionAbsence.exe.config
+C:\Users\Administrateur\source\repos\Gestion-ABS-\GestionAbsence\bin\Debug\GestionAbsence.exe
+C:\Users\Administrateur\source\repos\Gestion-ABS-\GestionAbsence\bin\Debug\GestionAbsence.pdb
+C:\Users\Administrateur\source\repos\Gestion-ABS-\GestionAbsence\bin\Debug\Caliburn.Micro.dll
+C:\Users\Administrateur\source\repos\Gestion-ABS-\GestionAbsence\bin\Debug\Caliburn.Micro.Platform.Core.dll
+C:\Users\Administrateur\source\repos\Gestion-ABS-\GestionAbsence\bin\Debug\Caliburn.Micro.Platform.dll
+C:\Users\Administrateur\source\repos\Gestion-ABS-\GestionAbsence\bin\Debug\HandyControl.dll
+C:\Users\Administrateur\source\repos\Gestion-ABS-\GestionAbsence\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\Administrateur\source\repos\Gestion-ABS-\GestionAbsence\bin\Debug\Caliburn.Micro.xml
+C:\Users\Administrateur\source\repos\Gestion-ABS-\GestionAbsence\bin\Debug\Caliburn.Micro.Platform.xml
+C:\Users\Administrateur\source\repos\Gestion-ABS-\GestionAbsence\bin\Debug\Caliburn.Micro.Platform.Core.xml
+C:\Users\Administrateur\source\repos\Gestion-ABS-\GestionAbsence\bin\Debug\HandyControl.xml
+C:\Users\Administrateur\source\repos\Gestion-ABS-\GestionAbsence\bin\Debug\en\HandyControl.resources.dll
+C:\Users\Administrateur\source\repos\Gestion-ABS-\GestionAbsence\bin\Debug\fa\HandyControl.resources.dll
+C:\Users\Administrateur\source\repos\Gestion-ABS-\GestionAbsence\bin\Debug\fr\HandyControl.resources.dll
+C:\Users\Administrateur\source\repos\Gestion-ABS-\GestionAbsence\bin\Debug\ko-KR\HandyControl.resources.dll
+C:\Users\Administrateur\source\repos\Gestion-ABS-\GestionAbsence\bin\Debug\ru\HandyControl.resources.dll
+C:\Users\Administrateur\source\repos\Gestion-ABS-\GestionAbsence\bin\Debug\tr\HandyControl.resources.dll
+C:\Users\Administrateur\source\repos\Gestion-ABS-\GestionAbsence\obj\Debug\App.baml
+C:\Users\Administrateur\source\repos\Gestion-ABS-\GestionAbsence\obj\Debug\Views\LoginView.baml
+C:\Users\Administrateur\source\repos\Gestion-ABS-\GestionAbsence\obj\Debug\Views\ShellView.baml
+C:\Users\Administrateur\source\repos\Gestion-ABS-\GestionAbsence\obj\Debug\GestionAbsence.g.resources
+C:\Users\Administrateur\source\repos\Gestion-ABS-\GestionAbsence\obj\Debug\GestionAbsence.Properties.Resources.resources
+C:\Users\Administrateur\source\repos\Gestion-ABS-\GestionAbsence\obj\Debug\GestionAbsence.csproj.GenerateResource.cache
+C:\Users\Administrateur\source\repos\Gestion-ABS-\GestionAbsence\obj\Debug\GestionAbsence.csproj.CoreCompileInputs.cache
+C:\Users\Administrateur\source\repos\Gestion-ABS-\GestionAbsence\obj\Debug\GestionAbsence.csproj.CopyComplete
+C:\Users\Administrateur\source\repos\Gestion-ABS-\GestionAbsence\obj\Debug\Styles\Fonts.baml

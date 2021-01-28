@@ -1,0 +1,9 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:GestionAbsence.Styles">
+    <FontFamily x:Key="CeraBlack">Cera pro black, pack://GestionAbsence;,,,/fonts/#Cera pro black</FontFamily>
+    <FontFamily x:Key="CeraBold">Cera pro bold, pack://GestionAbsence;,,,/fonts/#Cera pro bold</FontFamily>
+    <FontFamily x:Key="CeraLight">Cera pro light, pack://GestionAbsence;,,,/fonts/#Cera pro light</FontFamily>
+    <FontFamily x:Key="CeraMedium">Cera pro medium, pack://GestionAbsence;,,,/fonts/#Cera pro medium</FontFamily>
+    <FontFamily x:Key="CeraRegular">Cera pro regular, pack://GestionAbsence;,,,/fonts/#Cera pro regular</FontFamily>
+</ResourceDictionary>
