@@ -145,9 +145,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Views\langCloudAnime.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="images\langCloudAnime.png" />
   </ItemGroup>
   <ItemGroup>
